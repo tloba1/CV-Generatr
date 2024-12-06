@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{user_profile.name}}</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f9;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            background: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1, h2 {
+            color: #2c3e50;
+        }
+
+        h1 {
+            margin-bottom: 10px;
+        }
+
+        h2 {
+            margin-top: 20px;
+            margin-bottom: 10px;
+            font-size: 18px;
+            border-bottom: 2px solid #3498db;
+            display: inline-block;
+            padding-bottom: 5px;
+        }
+
+        .summary, .skills, .education {
+            margin-top: 20px;
+        }
+
+        .skills ul, .education ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .skills ul li, .education ul li {
+            background: #3498db;
+            color: #fff;
+            padding: 10px;
+            margin: 5px 0;
+            border-radius: 5px;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 20px;
+            margin-bottom: 20px;
+            font-size: 14px;
+            color: #7f8c8d;
+        }
+        a {
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>{{ user_profile.name }}</h1>
+        <p>Email: <a href="mailto:{{ user_profile.email }}">{{ user_profile.email }}</a></p>
+        <p>Phone: <a href="tel:{{ user_profile.phone }}">{{ user_profile.phone }}</a></p>
+        
+        <div class="summary">
+            <h2>Summary</h2>
+            <p>{{ user_profile.summary }}</p>
+        </div>
+        
+        <div class="skills">
+            <h2>Skills</h2>
+            <ul>
+                <li>{{ user_profile.skills }}</li>
+            </ul>
+        </div>
+        
+        <div class="education">
+            <h2>Education</h2>
+            <ul>
+                <li>Schooling: {{ user_profile.school }}</li>
+                <li>{{user_profile.degree}} from {{ user_profile.university }}</li>
+            </ul>
+        </div>
+        <div class="skills">
+            <h2>Previous Work</h2>
+            <ul>
+                <li>{{ user_profile.previous_work }}</li>
+            </ul>
+        </div>
+    </div>
+    <footer>
+        2024
+    </footer>
+</body>
+</html>
